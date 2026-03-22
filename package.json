@@ -1,0 +1,15 @@
+{
+  "name": "closeout-qa-automation",
+  "version": "1.0.0",
+  "description": "QA Automation suite for Closeout photo-upload & AI validation workflow",
+  "scripts": {
+    "cy:open":    "cypress open",
+    "cy:run":     "cypress run",
+    "cy:run:ui":  "cypress run --spec 'cypress/e2e/ui/**/*.cy.js'",
+    "cy:run:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.js'"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.0",
+    "sharp":   "^0.33.0"
+  }
+}

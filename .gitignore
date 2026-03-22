@@ -1,0 +1,12 @@
+node_modules/
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# Local env overrides — never commit credentials
+cypress.env.json
+.env
+
+# OS noise
+.DS_Store
+Thumbs.db
