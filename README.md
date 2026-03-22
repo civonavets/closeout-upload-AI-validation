@@ -50,6 +50,8 @@ closeout-qa/
 ## Setup
 
 ```bash
+git clone <repo-url>
+cd closeout
 npm install
 ```
 
