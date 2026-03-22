@@ -51,7 +51,7 @@ closeout-qa/
 
 ```bash
 git clone <repo-url>
-cd closeout
+cd closeout-photo-upload-AI-validation
 npm install
 ```
 
@@ -70,7 +70,7 @@ npm run cy:run:api     # API tests only
 
 ## Test Images
 
-Two base images are committed in `cypress/fixtures/images/`. Before each photo
+Two base images are committed in `cypress/fixtures/images/`. Before each photogit
 upload test, `sharp` generates a slightly modified copy (±2% brightness) so the
 server treats each run as a fresh upload. Generated copies are deleted
 automatically after the suite finishes. Replace the base images any time —
