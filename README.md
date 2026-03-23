@@ -19,7 +19,7 @@ closeout-qa/
 │   │       ├── 01_login_positive_api.cy.js
 │   │       └── 02_login_negative_api.cy.js
 │   ├── fixtures/
-│   │   ├── credentials.json.example   # placeholder - see Credentials section
+│   │   ├── credentials.json            
 │   │   └── images/
 │   │       ├── hardhat_base.jpg        # person WITH hardhat
 │   │       └── no_hardhat_base.jpg     # person WITHOUT hardhat
@@ -56,23 +56,6 @@ git clone <repo-url>
 cd closeout-photo-upload-AI-validation
 npm install
 ```
-
----
-
-## Credentials
-
-Credentials are not committed to this repository. All other test data is
-pre-filled in `credentials.json`.
-```bash
-# 1. Add username/password to the file
-#    - cypress/fixtures/credentials.json
-
-# 2. Fill in email, password
-#    - values will be sent separately via email
-
-# 3. Run the tests
-```
-
 ---
 
 ## Running Tests
