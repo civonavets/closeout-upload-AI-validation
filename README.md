@@ -53,7 +53,7 @@ closeout-qa/
 
 ```bash
 git clone <repo-url>
-cd closeout-photo-upload-AI-validation
+cd closeout-upload-AI-validation
 npm install
 ```
 ---
