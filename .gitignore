@@ -3,9 +3,12 @@ cypress/videos/
 cypress/screenshots/
 cypress/downloads/
 
-# Local env overrides — never commit credentials
-cypress.env.json
-.env
+# Real credentials — never commit, sent via email separately
+cypress/fixtures/credentials.json
+
+# Generated images — auto-deleted after each run
+cypress/fixtures/images/hardhat_*.jpg
+cypress/fixtures/images/no_hardhat_*.jpg
 
 # OS noise
 .DS_Store

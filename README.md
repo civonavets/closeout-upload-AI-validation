@@ -18,9 +18,11 @@ closeout-qa/
 │   │   └── api/
 │   │       ├── 01_login_positive_api.cy.js
 │   │       └── 02_login_negative_api.cy.js
-│   ├── fixtures/images/
-│   │   ├── hardhat_base.jpg        # person WITH hardhat
-│   │   └── no_hardhat_base.jpg     # person WITHOUT hardhat
+│   ├── fixtures/
+│   │   ├── credentials.json.example   # placeholder - see Credentials section
+│   │   └── images/
+│   │       ├── hardhat_base.jpg        # person WITH hardhat
+│   │       └── no_hardhat_base.jpg     # person WITHOUT hardhat
 │   └── support/
 │       ├── e2e.js
 │       ├── helpers.js
@@ -57,6 +59,22 @@ npm install
 
 ---
 
+## Credentials
+
+Credentials are not committed to this repository. All other test data is
+pre-filled in `credentials.json`.
+```bash
+# 1. Add username/password to the file
+#    - cypress/fixtures/credentials.json
+
+# 2. Fill in email, password
+#    - values will be sent separately via email
+
+# 3. Run the tests
+```
+
+---
+
 ## Running Tests
 
 ```bash
@@ -70,10 +88,8 @@ npm run cy:run:api     # API tests only
 
 ## Test Images
 
-Two base images are committed in `cypress/fixtures/images/`. Before each photogit
+Two base images are committed in `cypress/fixtures/images/`. Before each photo
 upload test, `sharp` generates a slightly modified copy (±2% brightness) so the
 server treats each run as a fresh upload. Generated copies are deleted
-automatically after the suite finishes. Replace the base images any time —
+automatically after the suite finishes. Replace the base images any time -
 just keep the same filenames.
-
----
