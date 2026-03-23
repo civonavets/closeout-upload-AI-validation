@@ -77,13 +77,3 @@ automatically after the suite finishes. Replace the base images any time —
 just keep the same filenames.
 
 ---
-
-## Assumptions
-
-- **POM** — all selectors live in Page Objects; tests never reference the DOM directly
-- **Selectors** — based on live DOM inspection; uses `ng-reflect-*` attributes, custom Angular component tags, and tooltip attributes for stability
-- **Timestamp scoping** — upload time is captured after each upload and used to scope assertions to the correct photo card, avoiding false matches when multiple photos exist
-- **AI timeout** — 120s timeout on validation assertions to account for slow AI processing
-- **No fixed waits** — `cy.wait()` is only used on network intercepts, never as a timer
-- **Device ID** — the login API requires a `deviceId`; a fresh UUID is generated per run via `helpers.js`
-- **API error codes** — the server returns either `UNAUTHORIZED` or `BAD_REQUEST` for the same invalid credentials depending on its state; TC-API-02 asserts on status `400` and absence of a token rather than a specific error code# closeout-photo-upload-AI-validation
