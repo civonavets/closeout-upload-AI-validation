@@ -1,12 +1,11 @@
 /// <reference types="cypress" />
 
 const { generateUUID } = require('../../support/helpers')
-
-const BASE_URL = 'https://closeout-r1.enetelsolutions.com'
+const data             = require('../../fixtures/credentials.json')
 
 const INVALID_USER = {
-  username: 'wrong@example.com',
-  password: 'WrongPassword!99',
+  username: data.invalidEmail,
+  password: data.invalidPassword,
   deviceId: generateUUID(),
 }
 
@@ -15,7 +14,7 @@ describe('API – Login Negative', () => {
   it('TC-API-02 | Should return 400 and error body for invalid credentials', () => {
     cy.request({
       method:           'POST',
-      url:              `${BASE_URL}/regions/oauth2/token`,
+      url:              `${data.apiUrl}/regions/oauth2/token`,
       body:             INVALID_USER,
       headers:          { 'Content-Type': 'application/json' },
       failOnStatusCode: false,

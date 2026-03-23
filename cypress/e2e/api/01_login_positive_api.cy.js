@@ -1,12 +1,11 @@
 /// <reference types="cypress" />
 
 const { generateUUID } = require('../../support/helpers')
-
-const BASE_URL = 'https://closeout-r1.enetelsolutions.com'
+const data             = require('../../fixtures/credentials.json')
 
 const VALID_USER = {
-  username: 'tebahe2307@onbap.com',
-  password: 'Closeout!123',
+  username: data.email,
+  password: data.password,
   deviceId: generateUUID(),
 }
 
@@ -15,7 +14,7 @@ describe('API – Login Positive', () => {
   it('TC-API-01 | Should return 200 and a valid token for valid credentials', () => {
     cy.request({
       method:           'POST',
-      url:              `${BASE_URL}/regions/oauth2/token`,
+      url:              `${data.apiUrl}/regions/oauth2/token`,
       body:             VALID_USER,
       headers:          { 'Content-Type': 'application/json' },
       failOnStatusCode: false,
@@ -24,7 +23,7 @@ describe('API – Login Positive', () => {
 
       const region = res.body[0]
       expect(region.name).to.eq('Region 1')
-      expect(region.base_uri).to.eq('https://closeout-r1.enetelsolutions.com')
+      expect(region.base_uri).to.eq(data.apiUrl)
 
       const token = region.tokens[0]
       expect(token.token_type).to.eq('bearer')
