@@ -16,9 +16,9 @@ describe('Photo Upload & AI Validation – Rejected', () => {
       LoginPage.visit(data.baseUrl).login(data.email, data.password)
       ControlPanelPage.navigate().searchProject(data.project).searchSite(data.site)
       SitePage.openSite(data.site)
-      SitePage.openPhotoNode(data.photoNode)
-      SitePage.uploadPhoto(imagePath)
-      SitePage.assertPhotoRejected()
+              .openPhotoNode(data.photoNode)
+              .uploadPhoto(imagePath)
+              .assertPhotoRejected()
     })
   })
 

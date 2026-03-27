@@ -16,9 +16,9 @@ describe('Photo Upload & AI Validation – Accepted', () => {
       LoginPage.visit(data.baseUrl).login(data.email, data.password)
       ControlPanelPage.navigate().searchProject(data.project).searchSite(data.site)
       SitePage.openSite(data.site)
-      SitePage.openPhotoNode(data.photoNode)
-      SitePage.uploadPhoto(imagePath)
-      SitePage.assertPhotoAccepted()
+              .openPhotoNode(data.photoNode)
+              .uploadPhoto(imagePath)
+              .assertPhotoAccepted()
     })
   })
 

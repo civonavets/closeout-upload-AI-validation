@@ -10,8 +10,6 @@ describe('Login – Positive', () => {
       .visit(data.baseUrl)
       .login(data.email, data.password)
       .assertLoginSuccess()
-
-    cy.url().should('not.include', 'login')
   })
 
 })
